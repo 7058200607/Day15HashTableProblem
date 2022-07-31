@@ -41,8 +41,25 @@ namespace Day15HashTableDemo
             linkedList.AddLast(item);
 
         }
-
-       
+        public void Remove(K key, V value)
+        {
+            int position = GetArrayPostion(key);
+            LinkedList<KeyValue<K, V>> linkedList = GetLinkedList(position);
+            bool itemFound = false;
+            KeyValue<K, V> foundItems = default(KeyValue<K, V>);
+            foreach (KeyValue<K, V> item in linkedList)
+            {
+                if (item.key.Equals(key))
+                {
+                    itemFound = true;
+                    foundItems = item;
+                }
+            }
+            if (itemFound)
+            {
+                linkedList.Remove(foundItems);
+            }
+        }
         protected LinkedList<KeyValue<K, V>> GetLinkedList(int position)
         {
             LinkedList<KeyValue<K, V>> linkedList = items[position];

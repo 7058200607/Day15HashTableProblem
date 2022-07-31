@@ -18,6 +18,9 @@ namespace Day15HashTableDemo
             hash.Add("3", "not");
             hash.Add("4", "to");
             hash.Add("5", "be");
+            
+            string hash0 = hash.Get("0");
+            Console.WriteLine("0th index value :" + hash0);
             string hash1 = hash.Get("1");
             Console.WriteLine("1th index value :" + hash1);
             string hash2 = hash.Get("2");
@@ -28,6 +31,12 @@ namespace Day15HashTableDemo
             Console.WriteLine("4th index value :" + hash4);
             string hash5 = hash.Get("5");
             Console.WriteLine("5th index value :" + hash5);
+           
+            hash.Remove("2","be");
+            hash.Remove("3", "not");
+       
+
+
 
 
         }
